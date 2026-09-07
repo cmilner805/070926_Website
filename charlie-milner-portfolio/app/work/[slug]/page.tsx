@@ -46,7 +46,7 @@ export default async function ProjectPage({
       </Link>
 
       {/* Title block */}
-      <header className="mt-8 border-b border-border/60 pb-8">
+      <header className="mt-10 pb-8">
         {project.clientWork && (
           <p className="mb-4 text-[0.7rem] uppercase tracking-[0.28em] text-muted-foreground">
             Professional Client Work
@@ -76,7 +76,7 @@ export default async function ProjectPage({
       </div>
 
       {/* Description */}
-      <section className="mx-auto mt-12 max-w-2xl">
+      <section className="mx-auto mt-14 max-w-2xl">
         <h2 className="text-xs uppercase tracking-[0.28em] text-muted-foreground">
           About the project
         </h2>
@@ -93,7 +93,7 @@ export default async function ProjectPage({
       </section>
 
       {/* Next project */}
-      <nav className="mt-20 border-t border-border/60 pt-8">
+      <nav className="mt-24 pt-8">
         <div className="flex items-center justify-between gap-4">
           <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
             Next project

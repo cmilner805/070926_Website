@@ -28,7 +28,7 @@ export default function ContactPage() {
           The best place to start is an email.
         </p>
 
-        <div className="mt-8 border-t border-border/60 sm:mt-10">
+        <div className="mt-10">
           <ContactRow
             label="Email"
             value={siteConfig.email}
