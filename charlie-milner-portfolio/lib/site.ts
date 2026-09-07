@@ -10,6 +10,5 @@ export const siteConfig = {
 export const nav = [
   { label: 'About Me', href: '/about' },
   { label: 'My Work', href: '/work' },
-  { label: 'Photography', href: '/photography' },
   { label: 'Contact Me', href: '/contact' },
 ] as const
