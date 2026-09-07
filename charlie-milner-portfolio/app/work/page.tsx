@@ -19,9 +19,9 @@ export default function WorkPage() {
       <div className="mt-16 lg:mt-24">
         <ProjectCard project={lead} priority className="lg:max-w-[72%]" />
       </div>
-      <div className="mt-16 grid grid-cols-1 gap-x-12 gap-y-20 sm:grid-cols-2 lg:mt-28 lg:grid-cols-12 lg:gap-y-28">
-        {rest.map((project, index) => (
-          <ProjectCard key={project.slug} project={project} className={index % 3 === 0 ? 'lg:col-span-7' : index % 3 === 1 ? 'lg:col-span-5 lg:mt-16' : 'lg:col-span-6'} />
+      <div className="mt-16 grid grid-cols-1 gap-x-12 gap-y-20 sm:grid-cols-2 lg:mt-28 lg:gap-y-24">
+        {rest.map((project) => (
+          <ProjectCard key={project.slug} project={project} />
         ))}
       </div>
     </div>

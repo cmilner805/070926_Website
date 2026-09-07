@@ -45,6 +45,7 @@ export const projects: Project[] = [
     category: 'Documentary',
     role: 'Editor / Script Supervisor / 2nd Assistant Camera',
     youtubeId: 'Lf5G2CAAVy4',
+    cover: '/images/mormon-cover.jpg',
     blurb:
       'An interview-driven documentary shaped from over six hours of footage in seven days.',
     description: [
@@ -101,6 +102,7 @@ export const projects: Project[] = [
     category: 'Narrative Comedy',
     role: 'Editor',
     youtubeId: 'Aie42xrh8UI',
+    cover: '/images/id-please-cover.png',
     blurb:
       'A rapid-fire narrative comedy built around comedic timing and character rhythm.',
     description: [
