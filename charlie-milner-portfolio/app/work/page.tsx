@@ -4,38 +4,24 @@ import { ProjectCard } from '@/components/project-card'
 
 export const metadata: Metadata = {
   title: 'My Work',
-  description:
-    'A selection of documentary, narrative and client films edited by Charlie Milner.',
+  description: 'A selection of documentary, narrative and client films edited by Charlie Milner.',
 }
 
 export default function WorkPage() {
   const [lead, ...rest] = projects
 
   return (
-    <div className="mx-auto w-full max-w-7xl px-5 py-16 sm:px-8 sm:py-24">
-      <header className="max-w-3xl">
-        <p className="text-xs uppercase tracking-[0.32em] text-[var(--page-accent)]">
-          Selected Projects
-        </p>
-        <h1 className="mt-5 text-balance font-serif text-5xl leading-[1] tracking-tight sm:text-7xl">
-          My Work
-        </h1>
-        <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
-          Documentary, narrative and client films where editing helped find and shape
-          the story. Hover a project to see its title and year, or open it to watch the
-          film and read about the edit.
-        </p>
+    <div className="mx-auto w-full px-5 pb-20 pt-14 sm:px-8 sm:pb-28 sm:pt-24 lg:px-12">
+      <header>
+        <h1 className="text-balance font-serif text-6xl leading-[0.9] tracking-[-0.04em] sm:text-8xl">My Work</h1>
       </header>
 
-      {/* Lead project, full-width, strongest prominence */}
-      <div className="mt-14">
-        <ProjectCard project={lead} priority />
+      <div className="mt-16 lg:mt-24">
+        <ProjectCard project={lead} priority className="lg:max-w-[72%]" />
       </div>
-
-      {/* Remaining projects in an editorial two-column rhythm */}
-      <div className="mt-6 grid grid-cols-1 gap-x-8 gap-y-14 sm:mt-10 sm:grid-cols-2">
-        {rest.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
+      <div className="mt-16 grid grid-cols-1 gap-x-12 gap-y-20 sm:grid-cols-2 lg:mt-28 lg:grid-cols-12 lg:gap-y-28">
+        {rest.map((project, index) => (
+          <ProjectCard key={project.slug} project={project} className={index % 3 === 0 ? 'lg:col-span-7' : index % 3 === 1 ? 'lg:col-span-5 lg:mt-16' : 'lg:col-span-6'} />
         ))}
       </div>
     </div>

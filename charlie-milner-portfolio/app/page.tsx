@@ -1,80 +1,23 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
-import { LockViewport } from '@/components/lock-viewport'
 
 export default function HomePage() {
   return (
-    <>
-      {/* Locks to one viewport height with no scroll on desktop; mobile scrolls normally. */}
-      <LockViewport minWidth={1024} />
-
-      {/* Hero */}
-      <section className="relative mx-auto flex w-full max-w-7xl flex-col gap-10 overflow-hidden px-5 pb-16 pt-14 sm:px-8 sm:pb-20 sm:pt-20 lg:h-full lg:flex-row lg:items-center lg:justify-between lg:gap-16 lg:overflow-hidden lg:py-0">
-        <div className="min-w-0 flex-1">
-          <p className="reveal-up relative z-10 text-xs uppercase tracking-[0.32em] text-[var(--page-accent)]">
-            UK Film &amp; Video Editing
-          </p>
-          <h1 className="reveal-up relative z-10 mt-6 text-balance font-serif text-6xl leading-[0.95] tracking-tight sm:text-8xl md:text-[8.5rem]">
-            Charlie Milner
-          </h1>
-          <p
-            className="reveal-up relative z-10 mt-4 font-sans text-xl uppercase tracking-[0.3em] text-muted-foreground sm:text-2xl"
-            style={{ animationDelay: '80ms' }}
-          >
-            Offline Editor
-          </p>
-          <p
-            className="reveal-up relative z-10 mt-10 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground sm:text-xl"
-            style={{ animationDelay: '160ms' }}
-          >
-            Hi, I&apos;m Charlie, an offline editor who loves shaping stories in the
-            cut. I work through structure, pacing and rhythm to find the film within
-            the footage, across documentary, narrative film and client work.
-          </p>
-          <div
-            className="reveal-up relative z-10 mt-10 flex flex-wrap items-center gap-6"
-            style={{ animationDelay: '240ms' }}
-          >
-            <Link
-              href="/work"
-              className="group inline-flex items-center gap-2 border-b border-foreground pb-1 text-sm uppercase tracking-[0.18em] text-foreground transition-opacity hover:opacity-70"
-            >
-              View My Work
-              <ArrowRight className="h-4 w-4 text-[var(--page-accent)] transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
-            <Link
-              href="/about"
-              className="text-sm uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground"
-            >
-              About Me
-            </Link>
-            <Link
-              href="/photography"
-              className="text-sm uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground"
-            >
-              Photography
-            </Link>
-            <Link
-              href="/contact"
-              className="text-sm uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground"
-            >
-              Contact Me
-            </Link>
-          </div>
+    <section className="mx-auto flex w-full flex-col px-5 pb-16 pt-12 sm:px-8 lg:min-h-[calc(100dvh-9rem)] lg:justify-center lg:px-12 lg:pb-20 lg:pt-16">
+      <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="max-w-3xl">
+          <h1 className="text-balance font-serif text-[clamp(4rem,9vw,9rem)] leading-[0.9] tracking-[-0.06em]">Charlie<br />Milner</h1>
+          <p className="mt-7 text-sm uppercase tracking-[0.25em] text-muted-foreground">Offline Editor</p>
+          <nav className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4" aria-label="Homepage">
+            <Link href="/work" className="group inline-flex items-center gap-3 border-b border-foreground pb-2 text-sm uppercase tracking-[0.18em]">View my work<ArrowRight className="h-4 w-4 text-[var(--page-accent)] transition-transform duration-300 group-hover:translate-x-1" /></Link>
+            <Link href="/about" className="text-sm uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground">About me</Link>
+            <Link href="/contact" className="text-sm uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground">Contact</Link>
+          </nav>
         </div>
-
-        {/* Graduation photo, vertically centered alongside the hero copy */}
-        <figure
-          className="reveal-up z-0 block shrink-0 self-center overflow-hidden rounded-md border border-border"
-          style={{ animationDelay: '120ms' }}
-        >
-          <img
-            src="/about/graduation.jpg"
-            alt="Charlie Milner at his university graduation"
-            className="aspect-square h-40 w-40 object-cover sm:h-56 sm:w-56 md:h-64 md:w-64 lg:h-72 lg:w-72 xl:h-80 xl:w-80"
-          />
+        <figure className="lg:justify-self-end">
+          <img src="/about/graduation.jpg" alt="Charlie Milner at his university graduation" className="aspect-[4/5] w-full max-w-md object-cover object-center lg:w-[30rem]" />
         </figure>
-      </section>
-    </>
+      </div>
+    </section>
   )
 }

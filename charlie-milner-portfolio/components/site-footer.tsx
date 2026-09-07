@@ -12,7 +12,7 @@ export function SiteFooter() {
   if (pathname === '/') {
     return (
       <footer className="border-t border-border/60">
-        <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center gap-2 px-5 py-4 text-center text-xs text-muted-foreground sm:flex-row sm:flex-wrap sm:gap-x-3 sm:gap-y-2 sm:px-8">
+        <div className="mx-auto flex w-full flex-col items-center justify-center gap-2 px-5 py-4 text-center text-xs text-muted-foreground sm:flex-row sm:flex-wrap sm:gap-x-3 sm:gap-y-2 sm:px-8">
           <p>First Class BA (Hons) Film Production</p>
           <span aria-hidden className="hidden text-muted-foreground/50 sm:inline">
             ·
@@ -21,12 +21,7 @@ export function SiteFooter() {
           <span aria-hidden className="hidden text-muted-foreground/50 sm:inline">
             ·
           </span>
-          <a
-            href={`mailto:${siteConfig.email}`}
-            className="whitespace-nowrap text-foreground underline underline-offset-4 transition-opacity hover:opacity-70"
-          >
-            {siteConfig.email}
-          </a>
+          <p className="whitespace-nowrap text-muted-foreground">{siteConfig.email}</p>
           <div className="flex items-center gap-3">
             <FooterSocialIcon href={siteConfig.linkedin} icon="/icons/linkedin.svg" label="LinkedIn" />
             <FooterSocialIcon href={siteConfig.youtube} icon="/icons/youtube.svg" label="YouTube" />
@@ -44,19 +39,14 @@ export function SiteFooter() {
 
   return (
     <footer className="border-t border-border/60">
-      <div className="mx-auto w-full max-w-7xl px-5 py-6 sm:px-8">
+      <div className="mx-auto w-full px-5 py-6 lg:px-12 sm:px-8">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="font-serif text-xl text-foreground">{siteConfig.name}</p>
             <p className="mt-0.5 text-sm text-muted-foreground">
               {siteConfig.role}. Available for new projects and collaborations.
             </p>
-            <a
-              href={`mailto:${siteConfig.email}`}
-              className="mt-2 inline-block text-sm text-foreground underline underline-offset-4 transition-opacity hover:opacity-70"
-            >
-              {siteConfig.email}
-            </a>
+            <p className="mt-2 text-sm text-muted-foreground">{siteConfig.email}</p>
           </div>
 
           <div className="flex flex-col gap-4 sm:flex-row sm:gap-12">
