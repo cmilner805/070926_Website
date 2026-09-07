@@ -12,7 +12,7 @@ export function SiteFooter() {
   if (pathname === '/') {
     return (
       <footer className="border-t border-border/60">
-        <div className="mx-auto flex w-full flex-col items-center justify-center gap-2 px-5 py-4 text-center text-xs text-muted-foreground sm:flex-row sm:flex-wrap sm:gap-x-3 sm:gap-y-2 sm:px-8">
+        <div className="mx-auto flex w-full flex-col items-center justify-center gap-2 px-5 py-4 text-center text-xs text-muted-foreground sm:flex-row sm:flex-wrap sm:gap-x-3 sm:gap-y-2 sm:px-8 lg:px-12">
           <p>First Class BA (Hons) Film Production</p>
           <span aria-hidden className="hidden text-muted-foreground/50 sm:inline">
             ·

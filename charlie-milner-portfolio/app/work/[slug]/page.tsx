@@ -48,7 +48,7 @@ export default async function ProjectPage({
       {/* Title block */}
       <header className="mt-8 border-b border-border/60 pb-8">
         {project.clientWork && (
-          <p className="mb-4 text-[0.7rem] uppercase tracking-[0.28em] text-muted-foreground">
+          <p className="mb-4 text-[0.7rem] uppercase tracking-[0.28em] text-[var(--page-accent)]">
             Professional Client Work
           </p>
         )}
