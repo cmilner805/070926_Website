@@ -11,7 +11,7 @@ export default function WorkPage() {
   const [lead, ...rest] = projects
 
   return (
-    <div className="mx-auto w-full max-w-7xl px-5 pb-20 pt-14 sm:px-8 sm:pb-28 sm:pt-24">
+    <div className="mx-auto w-full px-5 pb-20 pt-14 sm:px-8 sm:pb-28 sm:pt-24 lg:px-12">
       <header className="grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-end">
         <div>
           <p className="text-xs uppercase tracking-[0.34em] text-[var(--page-accent)]">Selected projects</p>

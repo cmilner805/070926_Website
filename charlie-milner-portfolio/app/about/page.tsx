@@ -15,7 +15,7 @@ const certifications: Certification[] = [
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto w-full max-w-7xl px-5 pb-20 pt-14 sm:px-8 sm:pb-28 sm:pt-24">
+    <div className="mx-auto w-full px-5 pb-20 pt-14 sm:px-8 sm:pb-28 sm:pt-24 lg:px-12">
       <header className="grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-end">
         <div><p className="text-xs uppercase tracking-[0.34em] text-[var(--page-accent)]">Editor</p><h1 className="mt-5 font-serif text-6xl leading-[0.9] tracking-[-0.04em] sm:text-8xl">About Me</h1></div>
         <p className="max-w-md text-pretty text-base leading-relaxed text-muted-foreground lg:justify-self-end">An editor interested in the space between performance, structure and feeling.</p>
