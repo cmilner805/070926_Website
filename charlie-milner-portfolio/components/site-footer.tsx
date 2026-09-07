@@ -21,12 +21,7 @@ export function SiteFooter() {
           <span aria-hidden className="hidden text-muted-foreground/50 sm:inline">
             ·
           </span>
-          <a
-            href={`mailto:${siteConfig.email}`}
-            className="whitespace-nowrap text-foreground underline underline-offset-4 transition-opacity hover:opacity-70"
-          >
-            {siteConfig.email}
-          </a>
+          <p className="whitespace-nowrap text-foreground">{siteConfig.email}</p>
           <div className="flex items-center gap-3">
             <FooterSocialIcon href={siteConfig.linkedin} icon="/icons/linkedin.svg" label="LinkedIn" />
             <FooterSocialIcon href={siteConfig.youtube} icon="/icons/youtube.svg" label="YouTube" />
@@ -51,12 +46,7 @@ export function SiteFooter() {
             <p className="mt-0.5 text-sm text-muted-foreground">
               {siteConfig.role}. Available for new projects and collaborations.
             </p>
-            <a
-              href={`mailto:${siteConfig.email}`}
-              className="mt-2 inline-block text-sm text-foreground underline underline-offset-4 transition-opacity hover:opacity-70"
-            >
-              {siteConfig.email}
-            </a>
+            <p className="mt-2 text-sm text-foreground">{siteConfig.email}</p>
           </div>
 
           <div className="flex flex-col gap-4 sm:flex-row sm:gap-12">
