@@ -10,6 +10,10 @@ export function ProjectCard({ project, priority, className }: { project: Project
         <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.025]">
           {project.cover ? <img src={project.cover} alt={`${project.title} film still`} className="h-full w-full object-cover" loading={priority ? 'eager' : 'lazy'} /> : <MediaFrame index={project.index} label={project.category} large={priority} />}
         </div>
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5 bg-black/0 opacity-0 transition-all duration-300 group-hover:bg-black/55 group-hover:opacity-100">
+          <span className="font-serif text-2xl tracking-tight text-[var(--page-accent)] sm:text-3xl">{project.title}</span>
+          <span className="text-sm text-[oklch(0.95_0.015_85)]">{project.year}</span>
+        </div>
       </div>
       <div className="mt-5 flex items-start justify-between gap-5 border-t border-border/70 pt-4">
         <div>

@@ -11,7 +11,7 @@ export default function WorkPage() {
   const [lead, ...rest] = projects
 
   return (
-    <div className="mx-auto w-full px-5 pb-20 pt-14 sm:px-8 sm:pb-28 sm:pt-24 lg:px-12">
+    <div className="mx-auto w-full px-5 pb-14 pt-14 sm:px-8 sm:pb-16 sm:pt-24 lg:px-12">
       <header>
         <h1 className="text-balance font-serif text-6xl leading-[0.9] tracking-[-0.04em] sm:text-8xl">My Work</h1>
       </header>
@@ -19,7 +19,7 @@ export default function WorkPage() {
       <div className="mt-16 lg:mt-24">
         <ProjectCard project={lead} priority />
       </div>
-      <div className="mt-16 grid grid-cols-1 gap-x-12 gap-y-20 sm:grid-cols-2 lg:mt-28 lg:gap-y-24">
+      <div className="mt-10 grid grid-cols-1 gap-x-12 gap-y-10 sm:grid-cols-2 lg:mt-14 lg:gap-y-12">
         {rest.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}
