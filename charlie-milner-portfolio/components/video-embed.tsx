@@ -7,7 +7,7 @@ import { MediaFrame } from '@/components/media-frame'
 /*
   Lazy YouTube facade: nothing loads until the visitor presses play,
   keeping initial page weight low. Falls back to an elegant frame with a
-  note when a film isn't embeddable yet (e.g. Mr Mortgages).
+  note when a film isn't embeddable yet.
 */
 export function VideoEmbed({
   youtubeId,

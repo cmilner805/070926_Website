@@ -22,21 +22,32 @@ export default function WorkPage() {
         </h1>
         <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
           Documentary, narrative and client films where editing helped find and shape
-          the story. Hover a project to see its title and year, or open it to watch the
-          film and read about the edit.
+          the story. Open a project to watch the film and read about the edit.
         </p>
       </header>
 
       {/* Lead project, full-width, strongest prominence */}
-      <div className="mt-14">
+      <div className="mt-16">
         <ProjectCard project={lead} priority />
       </div>
 
-      {/* Remaining projects in an editorial two-column rhythm */}
-      <div className="mt-6 grid grid-cols-1 gap-x-8 gap-y-14 sm:mt-10 sm:grid-cols-2">
-        {rest.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
-        ))}
+      {/* Remaining projects in an asymmetric editorial rhythm */}
+      <div className="mt-20 grid grid-cols-1 gap-x-10 gap-y-20 sm:grid-cols-12 sm:items-start">
+        {rest.map((project, i) => {
+          const spans = [
+            'sm:col-span-7',
+            'sm:col-span-5 sm:mt-16',
+            'sm:col-span-5',
+            'sm:col-span-7 sm:mt-16',
+            'sm:col-span-7',
+            'sm:col-span-5 sm:mt-16',
+          ]
+          return (
+            <div key={project.slug} className={spans[i % spans.length]}>
+              <ProjectCard project={project} />
+            </div>
+          )
+        })}
       </div>
     </div>
   )

@@ -58,30 +58,30 @@ export default function AboutPage() {
         </h1>
       </header>
 
-      <div className="mt-14 grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
+      <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-20">
         {/* Portrait + supporting images */}
         <div className="lg:col-span-5">
-          <div className="sticky top-24 space-y-4">
-            <div className="overflow-hidden rounded-md border border-border">
+          <div className="sticky top-24 space-y-6">
+            <div className="overflow-hidden">
               <img
                 src="/about/editing-suite.jpg"
                 alt="Charlie Milner editing at a dual-monitor Avid Media Composer suite"
                 className="aspect-[4/3] w-full object-cover"
               />
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="overflow-hidden rounded-md border border-border">
+            <div className="grid grid-cols-2 gap-6">
+              <div className="overflow-hidden">
                 <img
                   src="/about/night-camera.jpg"
                   alt="Charlie Milner on a night shoot beside a camera on a tripod"
-                  className="aspect-square w-full object-cover"
+                  className="aspect-[3/4] w-full object-cover"
                 />
               </div>
-              <div className="overflow-hidden rounded-md border border-border">
+              <div className="overflow-hidden">
                 <img
                   src="/about/photographing.jpg"
                   alt="Charlie Milner photographing outdoors with a compact film camera"
-                  className="aspect-square w-full object-cover"
+                  className="aspect-[3/4] w-full object-cover"
                 />
               </div>
             </div>
@@ -89,7 +89,7 @@ export default function AboutPage() {
         </div>
 
         {/* Copy */}
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-6 lg:col-start-7">
           <div className="max-w-2xl space-y-6 text-lg leading-relaxed text-foreground/90">
             <p className="text-pretty">
               Hi, I&apos;m Charlie, a First Class BA (Hons) Film Production graduate from
@@ -137,11 +137,11 @@ export default function AboutPage() {
           </div>
 
           {/* Certification */}
-          <div className="mt-8 border-t border-border/60 pt-6">
+          <div className="mt-14 pt-8">
             <h2 className="text-xs uppercase tracking-[0.28em] text-muted-foreground">
               Certification
             </h2>
-            <div className="mt-5 space-y-7">
+            <div className="mt-6 space-y-8">
               {certifications.map((cert) => (
                 <a
                   key={cert.title}

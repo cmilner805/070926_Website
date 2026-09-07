@@ -1,21 +1,23 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Inter, Fraunces } from 'next/font/google'
+import { Outfit, Newsreader } from 'next/font/google'
 import { SiteNav } from '@/components/site-nav'
 import { SiteFooter } from '@/components/site-footer'
 import './globals.css'
 
-const inter = Inter({
+const outfit = Outfit({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-outfit',
   display: 'swap',
+  weight: ['300', '400', '500', '600'],
 })
 
-const fraunces = Fraunces({
+const newsreader = Newsreader({
   subsets: ['latin'],
-  variable: '--font-fraunces',
+  variable: '--font-newsreader',
   display: 'swap',
-  axes: ['opsz'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
 })
 
 export const metadata: Metadata = {
@@ -54,7 +56,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`dark bg-background ${inter.variable} ${fraunces.variable}`}>
+    <html lang="en" className={`dark bg-background ${outfit.variable} ${newsreader.variable}`}>
       <body className="min-h-dvh font-sans antialiased">
         <SiteNav />
         <main>{children}</main>

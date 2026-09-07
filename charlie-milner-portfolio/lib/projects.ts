@@ -58,7 +58,7 @@ export const projects: Project[] = [
   {
     slug: 'mr-mortgages',
     index: '03',
-    title: 'Mr Mortgages: 20th Anniversary & How We Work',
+    title: 'Mr Mortgages: 20th Anniversary',
     year: '2026',
     category: 'Client / Corporate Documentary',
     role: 'Editor',
@@ -134,8 +134,8 @@ export const projects: Project[] = [
     title: 'Fairytales of the Future',
     year: '2025',
     category: 'Environmental Short Film',
-    role: 'Script Supervisor / DIT / Co-Editor',
-    videoNote: 'Video coming soon.',
+    role: 'Co-Editor / Script Supervisor / DIT',
+    youtubeId: '76R0RchyVdM',
     cover: '/projects/fairytales-of-the-future.jpg',
     blurb:
       'A fairy-tale reimagining that tackles deforestation, made for NAHEMI’s environmental film competition.',
