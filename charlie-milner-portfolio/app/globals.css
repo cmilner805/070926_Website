@@ -1,0 +1,150 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+/*
+  Deep midnight-blue palette, applied site-wide.
+  The whole interface (nav, pages, footer) sits on a single deep blue, with a
+  warm gold accent (--page-accent) chosen to complement it. Surfaces (card,
+  popover, secondary, muted) share the blue hue so everything tints together.
+*/
+:root {
+  color-scheme: dark;
+  --background: oklch(0.21 0.055 264);
+  --foreground: oklch(0.95 0.01 264);
+  --card: oklch(0.255 0.05 264);
+  --card-foreground: oklch(0.95 0.01 264);
+  --popover: oklch(0.235 0.05 264);
+  --popover-foreground: oklch(0.95 0.01 264);
+  --primary: oklch(0.95 0.01 264);
+  --primary-foreground: oklch(0.21 0.055 264);
+  --secondary: oklch(0.31 0.045 264);
+  --secondary-foreground: oklch(0.95 0.01 264);
+  --muted: oklch(0.31 0.045 264);
+  --muted-foreground: oklch(0.72 0.03 264);
+  --accent: oklch(0.33 0.045 264);
+  --accent-foreground: oklch(0.95 0.01 264);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.62 0.05 264);
+  --radius: 0.5rem;
+
+  /* Warm gold accent, complementary to the midnight blue. Applied site-wide. */
+  --page-accent: oklch(0.8 0.135 82);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  ::selection {
+    background: oklch(0.94 0 0);
+    color: oklch(0.145 0 0);
+  }
+}
+
+@layer utilities {
+  /*
+    Locks the page to exactly one viewport height with no scroll. Toggled on
+    <body> at runtime (see components/lock-viewport.tsx) only for the pages
+    that need it (home on desktop, contact everywhere), so every other page
+    keeps its normal scrolling flow. header/main/footer are body's direct
+    children, so this turns them into a fixed-height column where main
+    absorbs whatever space header and footer don't use.
+  */
+  .lock-viewport {
+    height: 100dvh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .lock-viewport > header {
+    flex-shrink: 0;
+  }
+  .lock-viewport > main {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+  }
+  .lock-viewport > main > * {
+    width: 100%;
+  }
+  .lock-viewport > footer {
+    flex-shrink: 0;
+  }
+
+  .reveal-up {
+    animation: reveal-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  @keyframes reveal-up {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .fade-in {
+    animation: fade-in 0.8s ease both;
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
