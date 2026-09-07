@@ -17,7 +17,7 @@ export default function WorkPage() {
       </header>
 
       <div className="mt-16 lg:mt-24">
-        <ProjectCard project={lead} priority className="lg:max-w-[72%]" />
+        <ProjectCard project={lead} priority />
       </div>
       <div className="mt-16 grid grid-cols-1 gap-x-12 gap-y-20 sm:grid-cols-2 lg:mt-28 lg:gap-y-24">
         {rest.map((project) => (

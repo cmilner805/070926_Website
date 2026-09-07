@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function PhotographyPage() {
   return (
-    <div className="mx-auto w-full max-w-7xl px-5 py-16 sm:px-8 sm:py-24">
+    <div className="mx-auto w-full px-5 py-16 sm:px-8 sm:py-24 lg:px-12">
       <header className="max-w-3xl">
         <p className="text-xs uppercase tracking-[0.32em] text-[var(--page-accent)]">
           Stills

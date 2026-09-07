@@ -16,7 +16,7 @@ export function ProjectCard({ project, priority, className }: { project: Project
           <h3 className="text-lg font-medium tracking-tight text-foreground sm:text-xl">{project.title}</h3>
           <p className="mt-1 text-sm text-muted-foreground">{project.role}</p>
         </div>
-        <span className="shrink-0 font-serif text-base italic text-muted-foreground">{project.year}</span>
+        <span className="shrink-0 font-serif text-base italic text-[var(--page-accent)]">{project.year}</span>
       </div>
     </Link>
   )

@@ -27,7 +27,7 @@ export function SiteNav() {
       <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
         <nav
           aria-label="Primary"
-          className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-6 px-5 sm:px-8"
+          className="mx-auto flex h-16 w-full items-center justify-between gap-6 px-5 sm:px-8 lg:px-12"
         >
           <Link
             href="/"
@@ -54,7 +54,7 @@ export function SiteNav() {
                       {item.label}
                       <span
                         className={cn(
-                          'absolute -bottom-1.5 left-0 h-px w-full origin-left scale-x-0 bg-foreground transition-transform duration-300',
+                          'absolute -bottom-1.5 left-0 h-px w-full origin-left scale-x-0 bg-[var(--page-accent)] transition-transform duration-300',
                           active && 'scale-x-100',
                         )}
                       />
