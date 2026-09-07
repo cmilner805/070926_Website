@@ -4,18 +4,31 @@ import { ArrowRight } from 'lucide-react'
 export default function HomePage() {
   return (
     <section className="mx-auto flex w-full flex-col px-5 pb-16 pt-12 sm:px-8 lg:min-h-[calc(100dvh-9rem)] lg:justify-center lg:px-12 lg:pb-20 lg:pt-16">
-      <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-8">
         <div className="max-w-3xl">
           <h1 className="text-balance font-serif text-[clamp(4rem,9vw,9rem)] leading-[0.9] tracking-[-0.06em]">Charlie<br />Milner</h1>
           <p className="mt-7 text-sm uppercase tracking-[0.25em] text-muted-foreground">Offline Editor</p>
-          <nav className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4" aria-label="Homepage">
-            <Link href="/work" className="group inline-flex items-center gap-3 border-b border-foreground pb-2 text-sm uppercase tracking-[0.18em]">View my work<ArrowRight className="h-4 w-4 text-[var(--page-accent)] transition-transform duration-300 group-hover:translate-x-1" /></Link>
-            <Link href="/about" className="text-sm uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground">About me</Link>
-            <Link href="/contact" className="text-sm uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground">Contact</Link>
+          <div className="mt-10">
+            <Link
+              href="/work"
+              className="group inline-flex items-center gap-3 bg-foreground px-7 py-4 text-sm font-medium uppercase tracking-[0.18em] text-background transition-colors duration-300 hover:bg-[var(--page-accent)]"
+            >
+              View my work
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+          </div>
+          <nav className="mt-6 flex flex-wrap items-center gap-x-7 gap-y-3" aria-label="Homepage">
+            <Link href="/about" className="text-xs uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground">About me</Link>
+            <Link href="/photography" className="text-xs uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground">Photography</Link>
+            <Link href="/contact" className="text-xs uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground">Contact</Link>
           </nav>
         </div>
         <figure className="lg:justify-self-end">
-          <img src="/about/graduation.jpg" alt="Charlie Milner at his university graduation" className="aspect-[4/5] w-full max-w-md object-cover object-center lg:w-[30rem]" />
+          <img
+            src="/images/about-hero-widescreen.jpg"
+            alt="Charlie Milner holding a film camera outdoors"
+            className="aspect-video w-full object-cover object-center"
+          />
         </figure>
       </div>
     </section>

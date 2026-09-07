@@ -127,11 +127,11 @@ const desktopRows: { id: string; span: 1 | 2 }[][] = [
   [{ id: 'PH 11', span: 2 }],
 ]
 const desktopRowHeight: Record<number, number> = {
-  0: 460,
-  1: 340,
-  2: 460,
-  3: 340,
-  4: 400,
+  0: 480,
+  1: 320,
+  2: 480,
+  3: 320,
+  4: 420,
 }
 
 export function PhotoGallery() {
